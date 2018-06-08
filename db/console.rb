@@ -4,22 +4,20 @@ require_relative('../models/film')
 require_relative('../models/ticket')
 
 film1 = Film.new({
-  'title' => '',
+  'title' => 'Titanic',
   'price' => 8
   })
 
 customer1 = Customer.new({
-  'name' => '',
+  'name' => 'Helen',
   'funds' => 25
   })
+customer1.save()
 
 ticket1 = Ticket.new({
   'customer_id' => customer1.id(),
   'film_id' => film1.id()
   })
-
-
-
 
   binding.pry
   nil
