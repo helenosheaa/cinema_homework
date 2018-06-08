@@ -44,4 +44,9 @@ def self.delete_all()
   SqlRunner.run(sql)
 end
 
+def self.map_items(ticket_data)
+  result = ticket_data.map { |ticket| Ticket.new( ticket ) }
+  return result
+end
+
 end
