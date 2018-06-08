@@ -46,12 +46,6 @@ def customers()
   return Customer.map_items(customer_data)
 end
 
-# def price()
-#   sql = "SELECT films.price WHERE id = $1"
-#   values = [@price, @id]
-#   SqlRunner.run(sql, values)
-# end
-
 def self.all()
   sql = "SELECT * FROM films"
   films = SqlRunner.run(sql)

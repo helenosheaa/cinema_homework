@@ -47,12 +47,16 @@ def films()
   return Film.map_items(film_data)
 end
 
-# def buy()
-#   sql = "SELECT films.price UPDATE customers.funds SET (funds -= price)
-#   = ($1) WHERE id = $2"
-#   values = [@funds, @id]
-#   SqlRunner.run(sql, values)
-# end
+def buy_ticket(film)
+  Ticket.new({'customer_id' => @id, 'film_id' => film.id}).save()
+  @funds -= film.price
+  update()
+  #PASS IN FILM
+  #CREATE NEW TICKET WITH FILM_ID AND @ID
+  #SAVE TICKET .save
+  #REDUCE FUNDS BY FILM.PRICE
+  #UPDATE CUSTOMER
+end
 
 def self.all()
   sql = "SELECT * FROM customers"
