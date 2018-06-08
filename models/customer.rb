@@ -1,4 +1,7 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./film.rb')
+require_relative('./ticket.rb')
+
 
 class Customer
 
@@ -43,6 +46,13 @@ def films()
   film_data = SqlRunner.run(sql, values)
   return Film.map_items(film_data)
 end
+
+# def buy()
+#   sql = "SELECT films.price UPDATE customers.funds SET (funds -= price)
+#   = ($1) WHERE id = $2"
+#   values = [@funds, @id]
+#   SqlRunner.run(sql, values)
+# end
 
 def self.all()
   sql = "SELECT * FROM customers"

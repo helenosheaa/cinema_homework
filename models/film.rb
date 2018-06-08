@@ -1,4 +1,6 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./customer.rb')
+require_relative('./ticket.rb')
 
 class Film
 
@@ -43,6 +45,12 @@ def customers()
   customer_data = SqlRunner.run(sql, values)
   return Customer.map_items(customer_data)
 end
+
+# def price()
+#   sql = "SELECT films.price WHERE id = $1"
+#   values = [@price, @id]
+#   SqlRunner.run(sql, values)
+# end
 
 def self.all()
   sql = "SELECT * FROM films"
