@@ -7,6 +7,7 @@ film1 = Film.new({
   'title' => 'Titanic',
   'price' => 8
   })
+film1.save()
 
 customer1 = Customer.new({
   'name' => 'Helen',
