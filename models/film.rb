@@ -46,6 +46,14 @@ def customers()
   return Customer.map_items(customer_data)
 end
 
+def number_of_viewers()
+  sql = "SELECT * FROM tickets WHERE tickets.film_id = $1"
+  values = [@id]
+  viewers = SqlRunner.run(sql, values)
+  viewers_array = Ticket.map_items(viewers)
+  return viewers_array.length
+end
+
 def self.all()
   sql = "SELECT * FROM films"
   films = SqlRunner.run(sql)
