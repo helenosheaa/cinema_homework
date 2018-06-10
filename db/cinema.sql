@@ -1,6 +1,14 @@
 DROP TABLE IF EXISTS tickets;
 DROP TABLE IF EXISTS customers;
 DROP TABLE IF EXISTS films;
+DROP TABLE IF EXISTS screenings;
+
+CREATE TABLE screenings (
+  id SERIAL4 PRIMARY KEY,
+  title VARCHAR(255),
+  showing_time VARCHAR(255),
+  tickets INT4
+);
 
 CREATE TABLE films (
   id SERIAL4 PRIMARY KEY,
