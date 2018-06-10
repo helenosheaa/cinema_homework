@@ -58,6 +58,14 @@ def buy_ticket(film)
   #UPDATE CUSTOMER
 end
 
+def customer_tickets_bought()
+  sql = "SELECT * FROM tickets WHERE tickets.customer_id = $1"
+  values = [@id]
+  bought = SqlRunner.run(sql, values)
+  tickets_array = Ticket.map_items(bought)
+  return tickets_array.length
+end
+
 def self.all()
   sql = "SELECT * FROM customers"
   customers = SqlRunner.run(sql)

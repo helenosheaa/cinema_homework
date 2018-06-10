@@ -52,3 +52,7 @@ def self.map_items(ticket_data)
 end
 
 end
+
+
+# Check how many tickets were bought by a customer
+#   - Check how many customers are going to watch a certain film
